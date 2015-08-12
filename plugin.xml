@@ -50,6 +50,7 @@
         <source-file src="src/android/parse/Parse-1.8.1.jar" target-dir="libs" framework="true" />
         <source-file src="src/android/parse/bolts-android-1.1.4.jar" target-dir="libs" framework="true" />
         <source-file src="src/android/parse/android-support-v4.jar" target-dir="libs" framework="true" />
+        <source-file src="src/android/AssetUtil.java" target-dir="src/com/phonegap/parseplugin" />
         <source-file src="src/android/ParsePlugin.java" target-dir="src/com/phonegap/parseplugin" />
         <source-file src="src/android/ParsePluginReceiver.java" target-dir="src/com/phonegap/parseplugin" />      
      </platform>

@@ -104,9 +104,19 @@ public class ParsePluginReceiver extends ParsePushBroadcastReceiver
 			builder.setContentText(pnData.optString("alert"));
 		}
 		
-		builder.setSmallIcon(getSmallIconId(context, intent))
-		       .setLargeIcon(getLargeIcon(context, intent))
+        AssetUtil assets  = AssetUtil.getInstance(context);
+        int resId = assets.getResIdForDrawable("file://ic_popup_reminder.png");
+
+        if (resId == 0) {
+            resId = android.R.drawable.screen_background_dark;
+        }
+
+		builder
+               // .setSmallIcon(getSmallIconId(context, intent))
+               .setSmallIcon(resId)
+		       .setLargeIcon(assets.getIconFromDrawable("icon"))
 		       .setNumber(nextCount(pnTag))
+               .setWhen(System.currentTimeMillis())
 		       .setContentIntent(contentIntent)
 		       .setDeleteIntent(deleteIntent)
 	           .setAutoCancel(true);
