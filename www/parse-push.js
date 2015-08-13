@@ -65,6 +65,15 @@ var ParsePlugin = {
             [appId, clientKey]
         );
     },
+    registerCallback: function(ecb, successCallback, errorCallback) {
+        cordova.exec(
+            successCallback,
+            errorCallback,
+            'ParsePlugin',
+            'registerCallback',
+            [ecb]
+        );
+    },
 };
 
 //
