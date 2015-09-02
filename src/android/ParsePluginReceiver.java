@@ -111,6 +111,8 @@ public class ParsePluginReceiver extends ParsePushBroadcastReceiver
             resId = android.R.drawable.screen_background_dark;
         }
 
+        Uri soundUri = assets.parseSound("res://platform_default");
+
 		builder
                // .setSmallIcon(getSmallIconId(context, intent))
                .setSmallIcon(resId)
@@ -120,6 +122,9 @@ public class ParsePluginReceiver extends ParsePushBroadcastReceiver
 		       .setContentIntent(contentIntent)
 		       .setDeleteIntent(deleteIntent)
 	           .setAutoCancel(true);
+        if (soundUri != null) {
+            builder.setSound(soundUri);
+        }
     
 	    return builder.build();
 	}

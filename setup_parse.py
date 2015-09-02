@@ -18,7 +18,7 @@ def run(app_id, client_key):
     path = cleanid.split('.')
     path = '/'.join(path)
     template = '''package %s;
-    
+
     import android.app.Application;
     import com.parse.Parse;
     import com.parse.ParseInstallation;
@@ -41,6 +41,8 @@ def run(app_id, client_key):
     with open('platforms/android/AndroidManifest.xml', 'r', encoding='utf-8') as io:
         androidManifest = '$$$$'.join(io.readlines())
         androidManifest = androidManifest.replace('<application', '<application android:name="MainApplication"')
+        receiver = '        <receiver android:name="com.parse.ParseBroadcastReceiver">$$$$            <intent-filter>$$$$                <action android:name="android.intent.action.BOOT_COMPLETED" />$$$$                <action android:name="android.intent.action.USER_PRESENT" />$$$$            </intent-filter>$$$$        </receiver>$$$$    </application>'
+        androidManifest = androidManifest.replace('</application>', receiver)
         # print(androidManifest)
 
     with open('platforms/android/AndroidManifest.xml', 'w', encoding='utf-8') as io:
