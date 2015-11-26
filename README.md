@@ -4,6 +4,10 @@ Cordova Parse.com Plugin
 _Android and iOS_
 --------------------------
 
+https://github.com/taivo/parse-push-plugin
+
+add `parse.min.js` i`underscore.min.js` into your `index.html`
+
 js instance after device is ready: 
 ```javascript
 console.log(ParsePlugin)
