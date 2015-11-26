@@ -1,7 +1,7 @@
 set -x
 
-APP_ID=QPdzQHpNzJuUBQlxIYbyFZSQ1pnwMZhT0KfxRZZx
-CLIENT_KEY=qdllbVIgjfVK4VivaaiOklH3fl73A5XxUqYBeJzr
+APP_ID=your-parse-app-id
+CLIENT_KEY=your-parse-client-key
 
 cordova plugin remove com.cordova.parseplugin
 cordova platform remove android 

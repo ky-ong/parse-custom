@@ -1,4 +1,4 @@
-# com.educationusatest.EducationUsa
+#! /env/bin/python3
 import re
 import sys
 
